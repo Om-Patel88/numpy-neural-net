@@ -1,0 +1,21 @@
+{
+  "layers": [
+    {
+      "in": 784,
+      "out": 256,
+      "activation": "relu"
+    },
+    {
+      "in": 256,
+      "out": 128,
+      "activation": "relu"
+    },
+    {
+      "in": 128,
+      "out": 10,
+      "activation": "none"
+    }
+  ],
+  "test_accuracy": 0.9875,
+  "weights": "weights.bin"
+}

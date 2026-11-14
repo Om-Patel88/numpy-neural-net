@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Digit Recognizer | numpy-neural-net</title>
+  <meta name="description" content="Draw a digit and watch a NumPy-trained neural network classify it live in your browser.">
+  <meta name="color-scheme" content="dark">
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main class="card">
+    <header>
+      <h1>Digit Recognizer</h1>
+      <p class="lede">
+        A <span id="depth">3</span>-layer MLP trained on MNIST with numpynet, a neural network library
+        I wrote using only NumPy. The forward pass runs right here in your browser in plain JavaScript.
+        <span id="accuracy" hidden></span>
+        <a href="https://github.com/Om-Patel88/numpy-neural-net">Source on GitHub</a>
+      </p>
+    </header>
+
+    <div class="demo">
+      <section class="draw">
+        <canvas id="pad" width="280" height="280" role="img"
+                aria-label="Drawing area. Draw a single digit with your mouse, finger or pen."></canvas>
+        <div class="controls">
+          <span class="hint">Draw a digit, 0 to 9</span>
+          <button id="clear" type="button">Clear</button>
+        </div>
+      </section>
+
+      <section class="results" aria-label="Prediction">
+        <div class="top">
+          <div class="guess">
+            <span class="label">Prediction</span>
+            <span id="digit" class="digit">&ndash;</span>
+            <span id="confidence" class="confidence">&nbsp;</span>
+          </div>
+          <figure class="preview">
+            <canvas id="preview" width="28" height="28" aria-hidden="true"></canvas>
+            <figcaption>What the network sees (28&times;28)</figcaption>
+          </figure>
+        </div>
+        <ol id="bars" class="bars" aria-hidden="true"></ol>
+        <p id="status" class="status" role="status">Loading model...</p>
+        <p id="announce" class="sr-only" aria-live="polite"></p>
+      </section>
+    </div>
+  </main>
+</body>
+</html>
